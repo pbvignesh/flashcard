@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Flashcard Program</h1>
+    <div class="file-upload">
+        <input type="file" id="csvFile" accept=".csv">
+        <button onclick="loadCSV()">Load CSV</button>
+    </div>
+    <div class="order-options">
+        <label>
+            <input type="radio" name="order" value="sequential" checked> Sequential
+        </label>
+        <label>
+            <input type="radio" name="order" value="random"> Random
+        </label>
+    </div>
+
+    <div id="flashcard" class="card" style="display: none;">
+        <div class="card-content">
+            <p id="question" class="question"></p>
+            <button class="hint-button" onclick="showHint()">Hint</button>
+            <button class="answer-button" onclick="showAnswer()">Show Answer</button>
+            <p id="hint" class="hint" style="display: none;"></p>
+            <p id="answer" class="answer" style="display: none;"></p>
+        </div>
+        <button class="next-button" onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <script src="flashcard.js"></script>
+</body>
+</html>
